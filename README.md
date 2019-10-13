@@ -10,7 +10,7 @@ docker exec -it 52dc6ebaabee ash
 
 # ubuntu
 
-・minimal ubuntu
+・minimal ubuntu  
 https://ubuntu.com/blog/minimal-ubuntu-released
 
 ex)
