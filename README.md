@@ -3,7 +3,7 @@
 # alpine
 
 ex)
-docker build --tag tobisako/test01 .
+docker build --tag tobisako/test01 . 
 docker run --publish 8000:3000 --detach --name orecontainer --env PORT=3000 tobisako/test01
 docker exec -it 52dc6ebaabee ash
 
