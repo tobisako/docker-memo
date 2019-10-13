@@ -1,0 +1,22 @@
+version: "3"
+services:
+
+  nodetest1:
+    container_name: "node-test-1"
+    build: ./test1
+    working_dir: /root
+    ports:
+      - "8100:8080"
+    command: [ "node", "app.js" ]
+
+  nodetest2:
+    build:
+      context: ./test2
+      dockerfile: test2.Dockerfile
+    working_dir: /home/node/t2
+    ports:
+      - "8201:8081"
+      - "8202:8082"
+    command: [ "npm", "run", "start2" ]
+
+#    container_name: "node-test-2"

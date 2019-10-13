@@ -24,3 +24,12 @@ https://nodejs.org/ja/docs/guides/nodejs-docker-webapp/
 docker build --tag tobisako/node-web-app .
 docker run -p 8001:8080 -d tobisako/node-web-app
 http://localhost:8001
+
+
+# node2
+see node2_README.md
+
+# other
+docker stop $(docker ps -aq)
+docker rm $(docker ps -aq)
+docker rmi $(docker images -q)
