@@ -2,7 +2,7 @@
 
 # alpine
 
-ex)
+ex)  
 docker build --tag tobisako/test01 .  
 docker run --publish 8000:3000 --detach --name orecontainer --env PORT=3000 tobisako/test01  
 docker exec -it 52dc6ebaabee ash  
@@ -13,7 +13,7 @@ docker exec -it 52dc6ebaabee ash
 ・minimal ubuntu  
 https://ubuntu.com/blog/minimal-ubuntu-released
 
-ex)
+ex)  
 docker build --tag tobisako/ubu1 .  
 docker run -it tobisako/ubu1
 
