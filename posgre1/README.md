@@ -2,6 +2,8 @@
 https://solutionware.jp/blog/tag/postgresql/  
 
 ダンプデータ（アーカイブ形式）を復元するサンプル。  
+$ psql --version  
+psql (PostgreSQL) 10.10 (Ubuntu 10.10-0ubuntu0.18.04.1)  
 
 id: postgres  
 pw: password  
@@ -13,6 +15,7 @@ psql -h localhost -p 5432 -U postgres -d postgres
 
 # testdb.dump作成方法
 pg_dump -h localhost -p 5432 -U postgres -Fc testdb > testdb.dump  
+※pg_restore時、ダンプファイル生成者がrootだとdocker-compose up でエラーになる現象があった。  
 
 # データ投入
 
