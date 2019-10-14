@@ -29,6 +29,11 @@ http://localhost:8001
 # node2
 see node2_README.md
 
+
+# posgre1
+restore archive-dump.
+
+
 # other
 docker stop $(docker ps -aq)
 docker rm $(docker ps -aq)
