@@ -33,6 +33,8 @@ see node2_README.md
 # posgre1
 restore archive-dump.
 
+# posgre2
+restore sql.
 
 # other
 docker stop $(docker ps -aq)
