@@ -36,6 +36,11 @@ restore archive-dump.
 # posgre2
 restore sql.
 
+
+# aws_ecr
+docker -> aws Fargate
+
+
 # other
 docker stop $(docker ps -aq)
 docker rm $(docker ps -aq)
