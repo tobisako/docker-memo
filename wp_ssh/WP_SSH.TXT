@@ -1,0 +1,59 @@
+wordpress + ssh コンテナをさくっと建てる。
+https://qiita.com/TakashiOshikawa/items/081d4780abdc21d63b1a
+ => Ubuntuでやってみる。
+
+ビルドし、起動した後、execでログインしSSH設定を修正する。
+（自動化できるはず。）
+
+※dockerライフサイクル
+run
+start
+stop
+rm
+commit
+
+
+◆ビルド
+docker build -t wp/ssh1 .
+
+◆WP起動
+
+・mysql起動
+docker run --name test-mysql -e MYSQL_ROOT_PASSWORD=test-pw -d mysql:5.7.21  
+
+・docker起動
+docker run --name test-wordpress --link test-mysql:mysql -d -p 8080:80 -p 2222:22 wp/ssh1
+
+◆wordpress起動確認
+
+・ブラウザでアクセス
+http://localhost:8080
+
+◆SSH接続設定
+
+・execでログイン
+docker exec -it <ID> bash
+
+・sshファイルを修正する
+/etc/ssh/sshd_config
+-----------------------
+PermitRootLogin yes
+PasswordAuthentication yes
+-----------------------
+
+・rootパスワードを設定する
+passwd root
+ -> 好きなPWを設定する
+
+・sshサーバーを手動で起動する
+/etc/init.d/ssh start
+
+・execを抜ける。
+exit
+
+・SSHログインをテストする
+ssh root:localhost -p 2222
+
+※あとはwinscpでもなんでも接続して好きに使う。
+（SSH公開鍵を設定するのもあり。でも使い捨てdockerだったらめんどいかも。）
+
