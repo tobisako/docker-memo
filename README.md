@@ -66,6 +66,6 @@ dockerでwordpressを立ち上げつつSSH接続設定も行うテスト
 
 
 # メモ
-docker stop $(docker ps -aq)
-docker rm $(docker ps -aq)
-docker rmi $(docker images -q)
+docker stop $(docker ps -aq)  
+docker rm $(docker ps -aq)  
+docker rmi $(docker images -q)  
